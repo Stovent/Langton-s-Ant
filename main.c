@@ -68,7 +68,10 @@ int main(int argc, char* argv[])
             break;
 
         if(ant.x < 0 || ant.x > width || ant.y < 0 || ant.y > height)
+        {
+            SDL_Delay(16);
             continue;
+        }
 
         const int pitch = width * format->BytesPerPixel;
 

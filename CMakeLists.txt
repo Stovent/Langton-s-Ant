@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
+cmake_policy(SET CMP0004 OLD)
 
 project(Langtons_ant)
 
@@ -16,7 +17,6 @@ find_package(SDL2)
 if(SDL2_FOUND)
 	add_executable(Langtons_ant ${SRCS})
 	target_include_directories(Langtons_ant PUBLIC ${SDL2_INCLUDE_DIRS})
-	target_link_directories(Langtons_ant PUBLIC ${SDL2_LIBDIR})
 	target_link_libraries(Langtons_ant ${SDL2_LIBRARIES})
 	set(CMAKE_C_FLAGS_DEBUG "-g")
 	set(CMAKE_C_FLAGS_RELEASE "-s -O3")
